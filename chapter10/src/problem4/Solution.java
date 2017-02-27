@@ -10,28 +10,32 @@ package problem4;
 
 public class Solution {
 
-  public static int findElementIndex(Listy list, int element){
+   //Just a skeleton
+  class Listy {
+      public int elementAt(int elem) {
+          return elem;
+      }
+  }
+  public static void findElementIndex(Listy list, int element){
    int index=1;
-   while(list.elementAt(index) != -1 && list.element(index)<element){
+   while(list.elementAt(index) != -1 && list.elementAt(index)<element){
      index *= 2;
    }
    binarySearch(list, element, index/2, index);
-
   }
 
   public static int binarySearch(Listy list, int value, int left, int right){
     int middle=(left+right)/2;
     int mid=list.elementAt(middle);
     if(mid>value || mid ==-1){
-      high=mid-1;
+      right=mid-1;
     }else if(mid<value){
-      low=mid-1;
+        left=mid-1;
     }else{
       return mid;
     }
     return -1;
     }
-  }
-
-
 }
+
+
