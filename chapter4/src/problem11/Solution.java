@@ -93,7 +93,7 @@ class Node {
         if (root.data > data) {
             root.left = deleteNode(root.left, data);
         } else if (root.data < data) {
-            root.left = deleteNode(root.right, data);
+            root.right = deleteNode(root.right, data);
         } else {
             if (root.left == null) {
                 return root.right;
