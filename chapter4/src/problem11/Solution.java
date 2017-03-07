@@ -95,6 +95,9 @@ class Node {
         } else if (root.data < data) {
             root.right = deleteNode(root.right, data);
         } else {
+            if(root.left ==null && root.right==null){
+                return root;
+            }
             if (root.left == null) {
                 return root.right;
             } else if (root.right == null) {
