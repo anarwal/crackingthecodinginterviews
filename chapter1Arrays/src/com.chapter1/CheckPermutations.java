@@ -8,7 +8,6 @@ import java.util.Scanner;
  * Check Permutations: Given two strings, check if they are permutation of each other
  */
 
-
 public class CheckPermutations {
 
     static boolean checkPermutations(String str1, String str2){
