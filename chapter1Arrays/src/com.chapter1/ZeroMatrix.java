@@ -65,6 +65,10 @@ public class ZeroMatrix {
 
     }
 
+    static void nullify(int[][] array, int n){
+        //method to make given row/column in array zero
+    }
+
     public static void main(String[] args) {
         int m, n = 0;
         Scanner scanner = new Scanner(System.in);
