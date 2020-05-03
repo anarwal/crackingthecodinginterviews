@@ -1,0 +1,28 @@
+package interviewQuestions.linkedlists;
+
+// Problem: https://leetcode.com/explore/interview/card/top-interview-questions-medium/107/linked-list/784/
+public class OddEvenLinkedList {
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
+
+    class Solution {
+        public ListNode oddEvenList(ListNode head) {
+            if (head == null) return null;
+            ListNode odd = head, even = head.next, evenHead = even;
+            while (even != null && even.next != null) {
+                odd.next = even.next;
+                odd = odd.next;
+                even.next = odd.next;
+                even = even.next;
+            }
+            odd.next = evenHead;
+            return head;
+        }
+    }
+}
