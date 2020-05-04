@@ -15,6 +15,27 @@ public class MergeSortedArray {
     Third Approach: While copying compare last elements from both A and B, place the elements accordingly then
     Third Approach is the most optimal one in this, as then we do not spend extra memory and time
      */
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+        int index1 = m-1;
+        int index2 = n-1;
+
+        int finalIndex = m+n-1;
+
+        while(index2>=0 && index1>=0 ){
+            if(nums1[index1]>nums2[index2]){
+                nums1[finalIndex] = nums1[index1];
+                index1--;
+            }else{
+                nums1[finalIndex] = nums2[index2];
+                index2--;
+            }
+            finalIndex--;
+        }
+
+        System.arraycopy(nums2, 0, nums1, 0,  index2 + 1);
+    }
+
+
 
     public static int[] mergeArrays(int[] A, int[] B){
         System.arraycopy(A, A[A.length-1], B, B[0],B.length-1);
