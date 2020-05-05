@@ -1,4 +1,4 @@
-package interviewQuestions.treeAndGraph;
+package bloomberg.treeAndGraphs;
 
 import java.util.LinkedList;
 import java.util.Queue;

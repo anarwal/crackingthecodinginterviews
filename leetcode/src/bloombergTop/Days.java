@@ -9,7 +9,6 @@ public class Days {
     {
         int nextday = days-1;
         int prev = 0;
-        int next = 0;
         while (nextday > 0){
             prev = states[0];
             states[0] = states[1]^0;
