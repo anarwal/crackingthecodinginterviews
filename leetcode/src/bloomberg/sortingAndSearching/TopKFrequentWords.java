@@ -35,14 +35,18 @@ public class TopKFrequentWords {
         return alist;
     }
 
-    public List<String> topKFrequentHeap(String[] words, int k) {
+    public static List<String> topKFrequentHeap(List<String> words, List<String> sentences, int k) {
         Map<String, Integer> count = new HashMap();
-        for (String word: words) {
-            count.put(word, count.getOrDefault(word, 0) + 1);
+        for (int i=0; i<sentences.size(); i++) {
+            String[] requests = sentences.get(i).split(" ");
+            for(String request: requests){
+                if(words.contains(request)){
+                    count.put(request, count.getOrDefault(request, 0) + 1);
+                }
+            }
         }
         PriorityQueue<String> heap = new PriorityQueue<String>(
-                (w1, w2) -> count.get(w1).equals(count.get(w2)) ?
-                        w2.compareTo(w1) : count.get(w1) - count.get(w2) );
+                (w1, w2) -> count.get(w1).equals(count.get(w2)) ? Integer.compare(w1.length(), w2.length()) : count.get(w1) - count.get(w2));
 
         for (String word: count.keySet()) {
             heap.offer(word);
@@ -56,15 +60,22 @@ public class TopKFrequentWords {
     }
 
     public static void main(String[] args){
-        int m, n = 0;
+        int m, n, p= 0;
         Scanner scanner = new Scanner(System.in);
         m = scanner.nextInt();
         n = scanner.nextInt();
-        String arr[] = new String[m];
+        List<String> words = new ArrayList<>();
         for(int i = 0; i < m; i++) {
-            arr[i] =scanner.next();
+            words.add(scanner.next());
         }
-        topKFrequent(arr, n);
+
+        p = scanner.nextInt();
+        List<String> sentences = new ArrayList<>();
+        for(int i = 0; i < p; i++) {
+            sentences.add(scanner.next());
+        }
+
+        topKFrequentHeap(words,sentences, n);
         scanner.close();
     }
 }
