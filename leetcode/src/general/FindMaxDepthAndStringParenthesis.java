@@ -1,6 +1,6 @@
 package general;
 
-public class FindMaxDepthAndString {
+public class FindMaxDepthAndStringParenthesis {
         static Character maxDepth(String S) {
             int current_max = 0; // current count
             int max = 0; // overall maximum count
