@@ -4,6 +4,15 @@ import java.util.*;
 
 public class TwoCityScheduling {
     public static int twoCitySchedCost(int[][] costs) {
+
+        //        Arrays.sort(costs,(int[] a, int[] b) -> (a[0] - a[1]) - (b[0] - b[1]));
+//        int totalCost = 0;
+//        for(int i = 0; i<costs.length/2; i++)
+//            totalCost += costs[i][0];
+//        for(int i = costs.length/2 ; i < costs.length ; i++)
+//            totalCost += costs[i][1];
+//        return totalCost;
+
         Arrays.sort(costs, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
@@ -39,13 +48,7 @@ public class TwoCityScheduling {
         }
         return res;
 
-//        Arrays.sort(costs,(int[] a, int[] b) -> (a[0] - a[1]) - (b[0] - b[1]));
-//        int totalCost = 0;
-//        for(int i = 0; i<costs.length/2; i++)
-//            totalCost += costs[i][0];
-//        for(int i = costs.length/2 ; i < costs.length ; i++)
-//            totalCost += costs[i][1];
-//        return totalCost;
+
     }
 
     public static void main(String[] args) {
