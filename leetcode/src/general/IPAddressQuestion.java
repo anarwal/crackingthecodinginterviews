@@ -4,11 +4,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.IntStream;
 
-import static java.util.stream.Collectors.joining;
-
-public class IPAdressQuestion {
+public class IPAddressQuestion {
     // Complete the checkIPs function below.
 
     static List<String> checkIPs(List<String> ip_array) {
