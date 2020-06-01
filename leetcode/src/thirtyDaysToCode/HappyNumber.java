@@ -16,6 +16,7 @@ public class HappyNumber {
     }
 
     public static boolean isHappy(int n) {
+        //to store pre-computed results to avoid looping
         List<Integer> alist = new ArrayList<>();
         while(n>1 && !(alist.contains(n))){
             alist.add(n);
